@@ -1,9 +1,7 @@
 import requests
 
-
 response = requests.get('https://db.ygoprodeck.com/api/v7/cardinfo.php') 
 if response.status_code == 200:
-  cards = response.json
-  for cards in cardinfo.php :
-   print(f"{cards['id']}") 
-
+    cards = response.json()
+    for card in cards['data']:
+        print(card['id'])
