@@ -12,12 +12,20 @@ if response.status_code == 200:
             print(f"Archetype: {card['archetype']},", end=" ")
         if 'scale' in card:
             print(f"Scale: {card['scale']},", end=" ")
+        if 'linkval' in card:
+            print(f"Link Value: {card['linkval']},", end=" ")
         if 'atk' in card:
-            print(f"ATK: {card['atk']}, DEF: {card['def']}, LVL: {card['level']},", end=" ")
+            print(f"ATK: {card['atk']},", end=" ")
+            if 'def' in card:
+                print(f"DEF: {card['def']},", end=" ")
+        if 'level' in card:
+            print(f"LVL: {card['level']},", end=" ")
         if 'attribute' in card:
             print(f"Attribute: {card['attribute']}")
         else:
             print()  # Just print a new line if no additional info is present
+
+
 
 
 
