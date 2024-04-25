@@ -6,14 +6,19 @@ if response.status_code == 200:
     cards = response.json()
     for card in cards['data']:
         print(f"name: {card['name']}, Type: {card['type']}, Frame Type: {card['frameType']}, Description: {card['desc']},", end=" ")
+        if 'race' in card:
+            print(f"Race: {card['race']},", end=" ")
+        if 'archetype' in card:
+            print(f"Archetype: {card['archetype']},", end=" ")
+        if 'scale' in card:
+            print(f"Scale: {card['scale']},", end=" ")
         if 'atk' in card:
             print(f"ATK: {card['atk']}, DEF: {card['def']}, LVL: {card['level']},", end=" ")
         if 'attribute' in card:
-            print(f"Attribute: {card['attribute']},", end=" ")
-        if 'archetype' in card:
-            print(f"Archetype: {card['archetype']}")
+            print(f"Attribute: {card['attribute']}")
         else:
-            print(f"Race: {card['race']}")
+            print()  # Just print a new line if no additional info is present
+
 
 
 
