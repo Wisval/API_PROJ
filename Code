@@ -15,3 +15,20 @@ if response.status_code == 200:
         else:
             print(f"Race: {card['race']}")
 
+
+
+
+old:
+
+import requests
+
+response = requests.get('https://db.ygoprodeck.com/api/v7/cardinfo.php') 
+if response.status_code == 200:
+    cards = response.json()
+    for card in cards['data']:
+        print(f"name:  {card['name']}, Type:  {card['type']}, Frame Type:  {card['frameType']}, Description:  {card['desc']}, Race:  {card['race']}, Archetype: {card['archetype']} ")
+        else
+        print(f"name:  {card['name']}, Type:  {card['type']}, Frame Type:  {card['frameType']}, Description:  {card['desc']}, ATK:  {card['atk']}, DEF:  {card['def']}, LVL:  {card['level']}, Race:  {card['race']}, Attribute:  {card[attribute]}")
+        else
+        print(f"name:  {card['name']}, Type:  {card['type']}, Frame Type:  {card['frameType']}, Description:  {card['desc']}, ATK:  {card['atk']}, DEF:  {card['def']}, LVL:  {card['level']}, Race:  {card['race']}, Attribute:  {card[attribute]}, Archetype:  {card['archetype']}")
+
